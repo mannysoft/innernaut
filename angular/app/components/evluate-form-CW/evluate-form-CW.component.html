@@ -1,0 +1,357 @@
+<div class="evaluate-back">
+    <md-tabs md-dynamic-height="" md-border-bottom="">
+    <md-tab label="Sigle Question">
+        <md-content class="md-padding">
+            <div style="margin-top: 50px;"></div>
+            <section layout="row" layout-sm="column" layout-align="center center" layout-wrap="">
+                <h1 >Answer The Question</h1>
+                <div style="margin-top: 50px;"></div>
+
+            </section>
+            <section layout="row" layout-sm="column" layout-align="center center" layout-wrap="">
+                <!--<div flex="20" ng-repeat="question in vm.questions.questions">-->
+
+                <h2>{{vm.firstquestions}}</h2>
+                <!--</div>-->
+            </section>
+            <form ng-submit="vm.submit()">
+                <section layout="row" layout-sm="column" layout-align="center center" layout-wrap="">
+                    <div flex="10" layout="" layout-align="center center">
+                        <img src="img/hand/down.png">
+                    </div>
+                    <md-slider flex="" md-discrete="" ng-model="vm.answer" step="1" min="0" max="100" aria-label="red" id="red-slider">
+                    </md-slider>
+                    <div flex="10" layout="" layout-align="center center">
+                        <img src="img/hand/up.png">
+
+                    </div>
+
+                </section>
+                <section layout="row" layout-sm="column" layout-align="center center" layout-wrap="">
+
+                    <div style="margin-top: 50px;"></div>
+                    <h1 >Option</h1>
+                    <md-input-container>
+                        <label>Giver</label>
+                        <input type="text" ng-model="vm.giver">
+                    </md-input-container>
+                    <md-input-container>
+                        <label>Taker</label>
+                        <input type="text" ng-model="vm.taker">
+                    </md-input-container>
+                    <md-input-container>
+                        <label>Day (you only select from 1 to 9)</label>
+                        <input type="text" ng-model="vm.day">
+                    </md-input-container>
+                </section>
+                <div style="margin-top: 50px;"></div>
+                <section layout="row" layout-sm="column" layout-align="center center" layout-wrap="">
+                    <md-button type="submit" class="md-primary md-raised">save</md-button>
+                </section>
+
+            </form>
+        </md-content>
+    </md-tab>
+    <md-tab label="3*3 Question">
+        <section layout="row" layout-sm="column" layout-align="center center" layout-wrap="">
+            <h1 class="md-display-2">3*3 Question</h1>
+
+        </section>
+
+
+                <section layout="row" layout-sm="column" layout-align="center center" layout-wrap="">
+                    <md-button class="md-raised qbutton-width " ng-click="vm.three(1)">Motivation</md-button>
+                    <md-button class="md-raised qbutton-width" ng-click="vm.three(2)">control</md-button>
+                    <md-button class="md-raised qbutton-width" ng-click="vm.three(3)">Relations</md-button>
+
+                </section>
+                <section layout="row" layout-sm="column" layout-align="center center" layout-wrap="">
+                    <md-button class="md-raised qbutton-width" ng-click="vm.three(4)">Emotion</md-button>
+                    <md-button class="md-raised qbutton-width" ng-click="vm.three(5)">Insight</md-button>
+                    <md-button class="md-raised qbutton-width" ng-click="vm.three(6)">Functions</md-button>
+
+                </section>
+                <section layout="row" layout-sm="column" layout-align="center center" layout-wrap="">
+                    <md-button class="md-raised qbutton-width" ng-click="vm.three(7)">Adaptation </md-button>
+                    <md-button class="md-raised qbutton-width" ng-click="vm.three(8)">Change</md-button>
+                    <md-button class="md-raised qbutton-width" ng-click="vm.three(9)">Balance</md-button>
+                </section>
+        <md-content class="md-padding">
+            <section layout="row" layout-sm="column" layout-align="center center" layout-wrap="">
+                <!--<div flex="20" ng-repeat="question in vm.questions.questions">-->
+                <img src="img/gquestion.png">
+                <h2>{{vm.secondquestions}}</h2>
+                <!--</div>-->
+            </section>
+            <form ng-submit="vm.submit1()">
+                <section layout="row" layout-sm="column" layout-align="center center" layout-wrap="">
+                    <div flex="10" layout="" layout-align="center center">
+                        <img src="img/hand/down.png">
+                    </div>
+                    <md-slider flex="" md-discrete="" ng-model="vm.answer" step="1" min="0" max="100" aria-label="rating">
+                    </md-slider>
+                    <div flex="10" layout="" layout-align="center center">
+                        <img src="img/hand/up.png">
+
+                    </div>
+
+                </section>
+                <section layout="row" layout-sm="column" layout-align="center center" layout-wrap="">
+
+                    <div style="margin-top: 50px;"></div>
+
+                </section>
+                <div style="margin-top: 50px;"></div>
+                <section layout="row" layout-sm="column" layout-align="center center" layout-wrap="">
+                    <md-button type="submit" class="md-primary md-raised">save</md-button>
+                </section>
+
+            </form>
+        </md-content>
+    </md-tab>
+    <md-tab label="3*3*2 Question">
+        <section layout="row" layout-sm="column" layout-align="center center" layout-wrap="">
+            <h1 class="md-display-2">3*3*2  Question</h1>
+
+        </section>
+
+        <section layout="row" layout-sm="column" layout-align="center center" layout-wrap="">
+            <md-button class="md-raised qbutton-width " ng-click="vm.three(1)">Motivation</md-button>
+            <md-button class="md-raised qbutton-width" ng-click="vm.three(2)">control</md-button>
+            <md-button class="md-raised qbutton-width" ng-click="vm.three(3)">Relations</md-button>
+
+        </section>
+        <section layout="row" layout-sm="column" layout-align="center center" layout-wrap="">
+            <md-button class="md-raised qbutton-width" ng-click="vm.three(4)">Emotion</md-button>
+            <md-button class="md-raised qbutton-width" ng-click="vm.three(5)">Insight</md-button>
+            <md-button class="md-raised qbutton-width" ng-click="vm.three(6)">Functions</md-button>
+
+        </section>
+        <section layout="row" layout-sm="column" layout-align="center center" layout-wrap="">
+            <md-button class="md-raised qbutton-width" ng-click="vm.three(7)">Adaptation </md-button>
+            <md-button class="md-raised qbutton-width" ng-click="vm.three(8)">Change</md-button>
+            <md-button class="md-raised qbutton-width" ng-click="vm.three(9)">Balance</md-button>
+        </section>
+        <md-content class="md-padding">
+            <section layout="row" layout-sm="column" layout-align="center center" layout-wrap="">
+                <!--<div flex="20" ng-repeat="question in vm.questions.questions">-->
+                <img src="img/gquestion.png">
+                <h2>{{vm.secondquestions}}</h2>
+                <!--</div>-->
+            </section>
+            <form ng-submit="vm.submit2()">
+                <section layout="row" layout-sm="column" layout-align="center center" layout-wrap="">
+                    <div flex="10" layout="" layout-align="center center">
+                        <img src="img/hand/down.png">
+                    </div>
+                    <md-slider flex="" md-discrete="" ng-model="vm.answer1" step="1" min="0" max="100" aria-label="rating">
+                    </md-slider>
+                    <div flex="10" layout="" layout-align="center center">
+                        <img src="img/hand/up.png">
+
+                    </div>
+
+                </section>
+                <section layout="row" layout-sm="column" layout-align="center center" layout-wrap="">
+
+
+                    <h2>Indicate with slider where you wish to come</h2>
+
+                </section>
+                <section layout="row" layout-sm="column" layout-align="center center" layout-wrap="">
+                    <div flex="10" layout="" layout-align="center center">
+                        <img src="img/hand/down.png">
+                    </div>
+                    <md-slider flex="" md-discrete="" ng-model="vm.answer2" step="1" min="0" max="100" aria-label="rating">
+                    </md-slider>
+                    <div flex="10" layout="" layout-align="center center">
+                        <img src="img/hand/up.png">
+
+                    </div>
+
+                </section>
+                <section layout="row" layout-sm="column" layout-align="center center" layout-wrap="">
+
+                    <div style="margin-top: 50px;"></div>
+
+                </section>
+                <div style="margin-top: 50px;"></div>
+                <section layout="row" layout-sm="column" layout-align="center center" layout-wrap="">
+                    <md-button type="submit" class="md-primary md-raised">save</md-button>
+                </section>
+
+            </form>
+        </md-content>
+    </md-tab>
+        <md-tab label="Group Scan">
+            <md-content class="md-padding">
+                <section layout="row" layout-sm="column" layout-align="center center" layout-wrap="">
+                    <h1 class="md-display-2">Group Scan</h1>
+                </section>
+
+                <section layout="row" layout-sm="column" layout-align="center center" layout-wrap="">
+                    <md-button class="md-raised qbutton-width " ng-click="vm.three(1)">Motivation</md-button>
+                    <md-button class="md-raised qbutton-width" ng-click="vm.three(2)">control</md-button>
+                    <md-button class="md-raised qbutton-width" ng-click="vm.three(3)">Relations</md-button>
+
+                </section>
+                <section layout="row" layout-sm="column" layout-align="center center" layout-wrap="">
+                    <md-button class="md-raised qbutton-width" ng-click="vm.three(4)">Emotion</md-button>
+                    <md-button class="md-raised qbutton-width" ng-click="vm.three(5)">Insight</md-button>
+                    <md-button class="md-raised qbutton-width" ng-click="vm.three(6)">Functions</md-button>
+
+                </section>
+                <section layout="row" layout-sm="column" layout-align="center center" layout-wrap="">
+                    <md-button class="md-raised qbutton-width" ng-click="vm.three(7)">Adaptation </md-button>
+                    <md-button class="md-raised qbutton-width" ng-click="vm.three(8)">Change</md-button>
+                    <md-button class="md-raised qbutton-width" ng-click="vm.three(9)">Balance</md-button>
+                </section>
+                <md-content class="md-padding">
+                    <section layout="row" layout-sm="column" layout-align="center center" layout-wrap="">
+                        <!--<div flex="20" ng-repeat="question in vm.questions.questions">-->
+                        <img src="img/gquestion.png">
+                        <h2>{{vm.secondquestions}}</h2>
+                        <!--</div>-->
+                    </section>
+                    <form ng-submit="vm.submit3()">
+                        <section layout="row" layout-sm="column" layout-align="center center" layout-wrap="">
+                            <p flex="10"></p>
+                            <h3 flex="10">Ruslan</h3>
+                            <div flex="80">
+                                <section layout="row" layout-sm="column" layout-align="center center" layout-wrap="">
+                                    <div flex="10" layout="" layout-align="center center">
+                                        <img src="img/hand/down.png">
+                                    </div>
+                                    <md-slider flex="" md-discrete="" ng-model="vm.answer1" step="1" min="0" max="100" aria-label="rating">
+                                    </md-slider>
+                                    <div flex="10" layout="" layout-align="center center">
+                                        <img src="img/hand/up.png">
+
+                                    </div>
+
+                                </section>
+                                <section layout="row" layout-sm="column" layout-align="center center" layout-wrap="">
+                                    <div flex="10" layout="" layout-align="center center">
+                                        <img src="img/hand/down.png">
+                                    </div>
+                                    <md-slider flex="" md-discrete="" ng-model="vm.answer2" step="1" min="0" max="100" aria-label="rating">
+                                    </md-slider>
+                                    <div flex="10" layout="" layout-align="center center">
+                                        <img src="img/hand/up.png">
+
+                                    </div>
+
+                                </section>
+                            </div>
+                            <p flex="9"></p>
+                        </section>
+                        <section layout="row" layout-sm="column" layout-align="center center" layout-wrap="">
+                            <p flex="10"></p>
+                            <h3 flex="10">Siv</h3>
+                            <div flex="80">
+                                <section layout="row" layout-sm="column" layout-align="center center" layout-wrap="">
+                                    <div flex="10" layout="" layout-align="center center">
+                                        <img src="img/hand/down.png">
+                                    </div>
+                                    <md-slider flex="" md-discrete="" ng-model="vm.answer3" step="1" min="0" max="100" aria-label="rating">
+                                    </md-slider>
+                                    <div flex="10" layout="" layout-align="center center">
+                                        <img src="img/hand/up.png">
+
+                                    </div>
+
+                                </section>
+                                <section layout="row" layout-sm="column" layout-align="center center" layout-wrap="">
+                                    <div flex="10" layout="" layout-align="center center">
+                                        <img src="img/hand/down.png">
+                                    </div>
+                                    <md-slider flex="" md-discrete="" ng-model="vm.answer4" step="1" min="0" max="100" aria-label="rating">
+                                    </md-slider>
+                                    <div flex="10" layout="" layout-align="center center">
+                                        <img src="img/hand/up.png">
+
+                                    </div>
+
+                                </section>
+                                <p flex="9"></p>
+                            </div>
+                        </section>
+                        <section layout="row" layout-sm="column" layout-align="center center" layout-wrap="">
+                            <p flex="10"></p>
+                            <h3 flex="10">Anna</h3>
+                            <div flex="80">
+                                <section layout="row" layout-sm="column" layout-align="center center" layout-wrap="">
+                                    <div flex="10" layout="" layout-align="center center">
+                                        <img src="img/hand/down.png">
+                                    </div>
+                                    <md-slider flex="" md-discrete="" ng-model="vm.answer5" step="1" min="0" max="100" aria-label="rating">
+                                    </md-slider>
+                                    <div flex="10" layout="" layout-align="center center">
+                                        <img src="img/hand/up.png">
+
+                                    </div>
+
+                                </section>
+                                <section layout="row" layout-sm="column" layout-align="center center" layout-wrap="">
+                                    <div flex="10" layout="" layout-align="center center">
+                                        <img src="img/hand/down.png">
+                                    </div>
+                                    <md-slider flex="" md-discrete="" ng-model="vm.answer6" step="1" min="0" max="100" aria-label="rating">
+                                    </md-slider>
+                                    <div flex="10" layout="" layout-align="center center">
+                                        <img src="img/hand/up.png">
+
+                                    </div>
+
+                                </section>
+                                <p flex="9"></p>
+                            </div>
+                        </section>
+                        <section layout="row" layout-sm="column" layout-align="center center" layout-wrap="">
+                            <p flex="10"></p>
+                            <h3 flex="10">Peter</h3>
+                            <div flex="80">
+                                <section layout="row" layout-sm="column" layout-align="center center" layout-wrap="">
+                                    <div flex="10" layout="" layout-align="center center">
+                                        <img src="img/hand/down.png">
+                                    </div>
+                                    <md-slider flex="" md-discrete="" ng-model="vm.answer7" step="1" min="0" max="100" aria-label="rating">
+                                    </md-slider>
+                                    <div flex="10" layout="" layout-align="center center">
+                                        <img src="img/hand/up.png">
+
+                                    </div>
+
+                                </section>
+                                <section layout="row" layout-sm="column" layout-align="center center" layout-wrap="">
+                                    <div flex="10" layout="" layout-align="center center">
+                                        <img src="img/hand/down.png">
+                                    </div>
+                                    <md-slider flex="" md-discrete="" ng-model="vm.answer8" step="1" min="0" max="100" aria-label="rating">
+                                    </md-slider>
+                                    <div flex="10" layout="" layout-align="center center">
+                                        <img src="img/hand/up.png">
+
+                                    </div>
+
+                                </section>
+                            </div>
+                            <p flex="9"></p>
+                        </section>
+
+                        <section layout="row" layout-sm="column" layout-align="center center" layout-wrap="">
+
+                            <div style="margin-top: 50px;"></div>
+
+                        </section>
+                        <div style="margin-top: 50px;"></div>
+                        <section layout="row" layout-sm="column" layout-align="center center" layout-wrap="">
+                            <md-button type="submit" class="md-primary md-raised">save</md-button>
+                        </section>
+
+                    </form>
+                </md-content>
+            </md-content>
+        </md-tab>
+</md-tabs>
+</div>
