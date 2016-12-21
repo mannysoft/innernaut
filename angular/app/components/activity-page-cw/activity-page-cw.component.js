@@ -20,15 +20,15 @@ class ActivityPageCwController{
     }
 
     getActivity(){
-        this.API.all('activity/'+this.gid).get('')
+        this.API.all('activity/' + this.gid).get('')
             .then((response) => {
             this.activityTitle = response.data.activity.name;
-        this.activityText = response.data.activity.description;
-    });
+            this.activityText = response.data.activity.description;
+        });
     }
     isOpenRight(){
         return this.$mdSidenav('right').isOpen();
-    };
+    }
     toggleRight(){
         this.$mdSidenav(right)
             .toggle()

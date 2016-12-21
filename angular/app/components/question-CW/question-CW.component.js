@@ -23,7 +23,7 @@ class QuestionCWController{
         var data = {
             activity: this.activity,
             problem: this.problem,
-            option: this.option,
+            option: this.option
         };
 
         this.API.all('questions').post(data).then((response) => {

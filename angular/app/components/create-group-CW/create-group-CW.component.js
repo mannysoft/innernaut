@@ -22,7 +22,7 @@ class CreateGroupCWController{
     submit(){
         var data = {
             name: this.name,
-            option: this.option,
+            option: this.option
         };
 
         this.API.all('groups').post(data).then((response) => {

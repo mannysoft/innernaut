@@ -9,7 +9,7 @@ class CreatePostFormController{
    submit(){
       var data = {
         name: this.name,
-        topic: this.topic,
+        topic: this.topic
       };
 
        this.API.all('posts').post(data).then((response) => {

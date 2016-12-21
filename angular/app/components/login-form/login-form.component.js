@@ -22,6 +22,8 @@ class LoginFormController {
 				this.$auth.setToken(response.data);
 
 				this.ToastService.show('Logged in successfully.');
+				this.email = '';
+				this.password = '';
 			})
 			.catch(this.failedLogin.bind(this));
 	}

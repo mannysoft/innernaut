@@ -26,7 +26,7 @@ class EvluateFormCWController{
             giver: this.giver,
             taker: this.taker,
             day: this.day,
-            answer: this.answer,
+            answer: this.answer
         };
 
         this.API.all('evaluate').post(data).then((response) => {

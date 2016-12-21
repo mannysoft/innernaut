@@ -11,7 +11,7 @@ class CreateElementCWController{
             titre: this.titre,
             description: this.description,
             lieu: this.lieu,
-            photo: this.photo.base64,
+            photo: this.photo.base64
         };
 
         this.API.all('create-element').post(data).then((response) => {

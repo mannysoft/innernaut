@@ -16,19 +16,19 @@ class ActivityFormCWController{
         this.API.all('list-activities').get('')
             .then((response) => {
             this.activities = response.data;
-    });
+        });
     }
 
     submit(){
         var data = {
             name: this.name,
             description: this.description,
-            options: this.options,
+            options: this.options
         };
 
         this.API.all('activities').post(data).then((response) => {
             this.ToastService.show('Activity added successfully');
-    });
+        });
         this.getActivities();
     }
 
@@ -39,7 +39,7 @@ class ActivityFormCWController{
 
         this.API.all('delete-activity').post(data).then((response) => {
             this.ToastService.show('Activity delete successfully');
-    });
+        });
         this.getActivities();
     }
 
