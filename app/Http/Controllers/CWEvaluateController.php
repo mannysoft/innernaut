@@ -10,8 +10,14 @@ class CWEvaluateController extends Controller
 {
     public function create(Request $request)
     {
+        $this->validate($request, [
+            'giver'  => 'required',
+            'taker' => 'required',
+            'day' => 'required',
+            'answer' => 'required',
+       ]);
 
-       $evaluate = new Evaluate;
+        $evaluate = new Evaluate;
         $evaluate->group_id =1;
         $evaluate->give_user_id = $request->input('giver');
         $evaluate->take_user_id = $request->input('taker');
