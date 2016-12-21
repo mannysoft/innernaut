@@ -135,6 +135,14 @@ export function RoutesConfig($stateProvider, $urlRouterProvider) {
                 }
             }
         })
+        .state('app.day', {
+            url: '/day/:id',
+            views: {
+                'main@': {
+                    templateUrl: getView('day0-cw')
+                }
+            }
+        })
         .state('app.day0', {
             url: '/day0',
             views: {
@@ -205,6 +213,14 @@ export function RoutesConfig($stateProvider, $urlRouterProvider) {
             views: {
                 'main@': {
                     templateUrl: getView('day8-cw')
+                }
+            }
+        })
+        .state('app.dayoff0', {
+            url: '/dayoff0',
+            views: {
+                'main@': {
+                    templateUrl: getView('dayoff0')
                 }
             }
         })

@@ -1,3 +1,4 @@
+import {Dayoff0Component} from './app/components/dayoff0/dayoff0.component';
 import {ActivityPageCwComponent} from './app/components/activity-page-cw/activity-page-cw.component';
 import {Day8CwComponent} from './app/components/day8-cw/day8-cw.component';
 import {Day7CwComponent} from './app/components/day7-cw/day7-cw.component';
@@ -28,6 +29,7 @@ import {RegisterFormComponent} from './app/components/register-form/register-for
 
 
 angular.module('app.components')
+	.component('dayoff0', Dayoff0Component)
 	.component('activityPageCw', ActivityPageCwComponent)
 	.component('day8Cw', Day8CwComponent)
 	.component('day7Cw', Day7CwComponent)

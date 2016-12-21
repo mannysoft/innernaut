@@ -17,10 +17,10 @@ class CreateFakeUsers extends Migration
         $email = '';
         for($i = 1; $i < 7; $i ++){
             $email = 'arwuser' . $i . '@gmail.com';
-            User::create(['name' => 'arwuser' . $i, 'email' => $email, 'password' => bcrypt('123456'), 'group_id' => 1]);
+            User::create(['name' => 'arwuser' . $i, 'email' => $email, 'password' => bcrypt('12345678'), 'group_id' => 1]);
         }
 
-        User::create(['name' => 'adminuser', 'email' => 'adminuser@gmail.com', 'password' => bcrypt('123456'), 'is_admin' => 1]);
+        User::create(['name' => 'adminuser', 'email' => 'adminuser@gmail.com', 'password' => bcrypt('12345678'), 'is_admin' => 1]);
     }
 
     /**
