@@ -1,0 +1,26 @@
+Activity Module
+
+Files needed to run this module:
+
+resources/views/index.blade.php
+angular/app/components/activity-page-cw/activity-page-cw.component.js
+angular/app/components/activity-page-cw/activity-page-cw.component.html
+angular/app/components/day0-cw/day0-cw.component.html
+app/User.php
+angular/app/components/activity-page-cw/activity-page-cw.component.html
+angular/app/components/day0-cw/day0-cw.component.html
+angular/app/components/day1-cw/day1-cw.component.html
+angular/app/components/day2-cw/day2-cw.component.html
+angular/app/components/day3-cw/day3-cw.component.html
+angular/app/components/day4-cw/day4-cw.component.html
+angular/app/components/day5-cw/day5-cw.component.html
+angular/app/components/day6-cw/day6-cw.component.html
+angular/app/components/day7-cw/day7-cw.component.html
+angular/app/components/day8-cw/day8-cw.component.html
+angular/app/components/dayoff0/dayoff0.component.html
+angular/app/components/dayoff0/dayoff0.component.js
+angular/app/components/dayoff0/dayoff0.scss
+angular/app/pages/dayoff0/dayoff0.page.html
+angular/app/pages/dayoff0/dayoff0.scss
+angular/config/routes.config.js
+angular/index.components.js

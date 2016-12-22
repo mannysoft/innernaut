@@ -8,3 +8,4 @@ install
 public/js
 public/css
 public/build
+public/service-worker.js

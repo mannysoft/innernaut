@@ -1,0 +1,33 @@
+.panel{
+
+  margin-right: 80px;
+  margin-top:0px;
+  margin-left: 80px;
+}
+.card{
+  background-color: #27292c;
+  padding: 20px;
+  margin: 30px;
+
+}
+.day-button{
+  width:45px;
+  height:45px;
+
+
+}
+.day-section a:hover{
+  opacity: 0.3;
+  filter: alpha(opacity=30);
+}
+.day-label1{
+  margin-top: 13px;
+  color : white;
+}
+.day-label2{
+  margin-top: 13px;
+  color : #00A000;
+}
+.day-section{
+  margin-bottom: 10px;
+}

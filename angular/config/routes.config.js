@@ -147,7 +147,7 @@ export function RoutesConfig($stateProvider, $urlRouterProvider) {
             url: '/day0',
             views: {
                 'main@': {
-                    templateUrl: getView('day0-cw')
+                    templateUrl: getView('day0-mi')
                 }
             }
         })
@@ -156,7 +156,7 @@ export function RoutesConfig($stateProvider, $urlRouterProvider) {
             url: '/day1',
             views: {
                 'main@': {
-                    templateUrl: getView('day1-cw')
+                    templateUrl: getView('day1-mi')
                 }
             }
         })
@@ -164,7 +164,8 @@ export function RoutesConfig($stateProvider, $urlRouterProvider) {
             url: '/day2',
             views: {
                 'main@': {
-                    templateUrl: getView('day2-cw')
+                    // templateUrl: getView('day2-cw')
+                    templateUrl: getView('day2-mi')
                 }
             }
         })
@@ -172,7 +173,8 @@ export function RoutesConfig($stateProvider, $urlRouterProvider) {
             url: '/day3',
             views: {
                 'main@': {
-                    templateUrl: getView('day3-cw')
+                    // templateUrl: getView('day3-cw')
+                    templateUrl: getView('day3-mi')
                 }
             }
         })
@@ -180,7 +182,8 @@ export function RoutesConfig($stateProvider, $urlRouterProvider) {
             url: '/day4',
             views: {
                 'main@': {
-                    templateUrl: getView('day4-cw')
+                    // templateUrl: getView('day4-cw')
+                    templateUrl: getView('day4-mi')
                 }
             }
         })
@@ -188,7 +191,8 @@ export function RoutesConfig($stateProvider, $urlRouterProvider) {
             url: '/day5',
             views: {
                 'main@': {
-                    templateUrl: getView('day5-cw')
+                    // templateUrl: getView('day5-cw')
+                    templateUrl: getView('day5-mi')
                 }
             }
         })
@@ -196,7 +200,8 @@ export function RoutesConfig($stateProvider, $urlRouterProvider) {
             url: '/day6',
             views: {
                 'main@': {
-                    templateUrl: getView('day6-cw')
+                    // templateUrl: getView('day6-cw')
+                    templateUrl: getView('day6-mi')
                 }
             }
         })
@@ -204,7 +209,8 @@ export function RoutesConfig($stateProvider, $urlRouterProvider) {
             url: '/day7',
             views: {
                 'main@': {
-                    templateUrl: getView('day7-cw')
+                    // templateUrl: getView('day7-cw')
+                    templateUrl: getView('day7-mi')
                 }
             }
         })
@@ -212,7 +218,8 @@ export function RoutesConfig($stateProvider, $urlRouterProvider) {
             url: '/day8',
             views: {
                 'main@': {
-                    templateUrl: getView('day8-cw')
+                    // templateUrl: getView('day8-cw')
+                    templateUrl: getView('day8-mi')
                 }
             }
         })
