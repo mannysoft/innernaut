@@ -25,7 +25,8 @@ export function RoutesConfig($stateProvider, $urlRouterProvider) {
             url: '/',
             views: {
                 'main@': {
-                    templateUrl: getView('start-page-cw')
+                    // templateUrl: getView('start-page-cw')
+                    templateUrl: getView('start-page-mi')
                 }
             }
         })
@@ -236,7 +237,8 @@ export function RoutesConfig($stateProvider, $urlRouterProvider) {
             params: { id : null},
             views: {
                 'main@': {
-                    templateUrl: getView('activity-page-cw')
+                    // templateUrl: getView('activity-page-cw')
+                    templateUrl: getView('activity-page-mi')
                 }
             }
         })

@@ -11,6 +11,9 @@ import {Day0CwComponent} from './app/components/day0-cw/day0-cw.component';
 
 
 // Manny Isles
+// Components for activities
+import {StartPageMiComponent} from './app/components/start-page-mi/start-page-mi.component';
+import {ActivityPageMiComponent} from './app/components/activity-page-mi/activity-page-mi.component';
 import {Dayoff0Component} from './app/components/dayoff0/dayoff0.component';
 import {Day8MiComponent} from './app/components/day8-mi/day8-mi.component';
 import {Day7MiComponent} from './app/components/day7-mi/day7-mi.component';
@@ -21,6 +24,7 @@ import {Day3MiComponent} from './app/components/day3-mi/day3-mi.component';
 import {Day2MiComponent} from './app/components/day2-mi/day2-mi.component';
 import {Day1MiComponent} from './app/components/day1-mi/day1-mi.component';
 import {Day0MiComponent} from './app/components/day0-mi/day0-mi.component';
+// Manny Isles end
 
 
 import {StartPageCwComponent} from './app/components/start-page-cw/start-page-cw.component';
@@ -54,7 +58,10 @@ angular.module('app.components')
 	.component('day2Cw', Day2CwComponent)
 	.component('day1Cw', Day1CwComponent)
 	.component('day0Cw', Day0CwComponent)
-	.component('day0Mi', Day0MiComponent) // Manny Isles
+
+	.component('startPageMi', StartPageMiComponent)
+	.component('activityPageMi', ActivityPageMiComponent) // Manny Isles
+	.component('day0Mi', Day0MiComponent)
 	.component('day8Mi', Day8MiComponent)
 	.component('day7Mi', Day7MiComponent)
 	.component('day6Mi', Day6MiComponent)
@@ -63,6 +70,7 @@ angular.module('app.components')
 	.component('day3Mi', Day3MiComponent)
 	.component('day2Mi', Day2MiComponent)
 	.component('day1Mi', Day1MiComponent) // Manny Isles
+
 	.component('startPageCw', StartPageCwComponent)
 	.component('questionCW', QuestionCWComponent)
 	.component('listElementsCW', ListElementsCWComponent)
