@@ -1,0 +1,37 @@
+<div class="start">
+    <div layout="row" layout-wrap class="panel">
+        <div flex="49" >
+            <md-card class="card">
+                <md-card-content>
+                    <section layout="row" layout-align="center center">
+                        <div>
+                            <h3 class="day-label1">{{ vm.dayNumber }}</h3>
+                        </div>
+                    </section>
+                    <section layout="row" layout-align="center center" class="day-section">
+                        <div>
+                            <span style="color: #00A000">Oct 02,18:00</span>
+                        </div>
+                    </section>
+                    <section layout="row" layout-align="center center" class="day-section">
+                        <div>
+                            <span class="day-label1">{{ vm.dayName }}</span>
+                        </div>
+                    </section>
+
+                    <!-- Loop -->
+                    <section ng-repeat="activity in vm.activities" layout="row" class="day-section">
+                        <div flex="30">
+                            <a  href="#/days/{{ vm.id }}/activities/{{ activity.activity_number }}">
+                                <img src="img/activity/{{ activity.icon }}" class="day-button">
+                            </a>
+                        </div>
+                        <span class="day-label1" flex="50">{{ activity.activity_number }}. {{ activity.name }}</span>
+                        <span class="day-label2" flex="19">3 min/pers</span>
+                    </section>
+
+                </md-card-content>
+            </md-card>
+        </div>
+    </div>
+</div>

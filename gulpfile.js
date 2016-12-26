@@ -1,4 +1,4 @@
-var elixir     = require('laravel-elixir');
+var elixir = require('laravel-elixir');
 
 require('./tasks/concatScripts.task.js');
 require('./tasks/swPrecache.task.js');

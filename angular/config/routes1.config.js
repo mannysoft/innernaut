@@ -242,40 +242,4 @@ export function RoutesConfig($stateProvider, $urlRouterProvider) {
                 }
             }
         })
-        .state('app.days', {
-            url: '/days/:id',
-            params: { id : null},
-            views: {
-                'main@': {
-                    templateUrl: getView('days') // manny
-                }
-            }
-        })
-        .state('app.activities', {
-            url: '/days/:day_id/activities/:id',
-            params: { day_id: null, id : null},
-            views: {
-                'main@': {
-                    templateUrl: getView('activity-page-mi') // manny
-                }
-            }
-        })
-        .state('app.evaluateactivity', {
-            url: '/activities/:id/evaluate',
-            params: { id : null},
-            views: {
-                'main@': {
-                    templateUrl: getView('evaluate-form-mi')
-                }
-            }
-        })
-        // .state('app.activities', {
-        //     url: '/days/:day_id/activities/:id',
-        //     params: { day_id: null, id : null},
-        //     views: {
-        //         'main@': {
-        //             templateUrl: getView('activity-page-mi') // manny
-        //         }
-        //     }
-        // })
 }

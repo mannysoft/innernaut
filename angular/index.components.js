@@ -1,3 +1,4 @@
+import {DaysComponent} from './app/components/days/days.component';
 import {ActivityPageCwComponent} from './app/components/activity-page-cw/activity-page-cw.component';
 import {Day8CwComponent} from './app/components/day8-cw/day8-cw.component';
 import {Day7CwComponent} from './app/components/day7-cw/day7-cw.component';
@@ -24,6 +25,7 @@ import {Day3MiComponent} from './app/components/day3-mi/day3-mi.component';
 import {Day2MiComponent} from './app/components/day2-mi/day2-mi.component';
 import {Day1MiComponent} from './app/components/day1-mi/day1-mi.component';
 import {Day0MiComponent} from './app/components/day0-mi/day0-mi.component';
+import {EvaluateFormMIComponent} from './app/components/evaluate-form-mi/evaluate-form-mi.component';
 // Manny Isles end
 
 
@@ -47,6 +49,7 @@ import {RegisterFormComponent} from './app/components/register-form/register-for
 
 
 angular.module('app.components')
+	.component('days', DaysComponent)
 	.component('dayoff0', Dayoff0Component)
 	.component('activityPageCw', ActivityPageCwComponent)
 	.component('day8Cw', Day8CwComponent)
@@ -69,7 +72,8 @@ angular.module('app.components')
 	.component('day4Mi', Day4MiComponent)
 	.component('day3Mi', Day3MiComponent)
 	.component('day2Mi', Day2MiComponent)
-	.component('day1Mi', Day1MiComponent) // Manny Isles
+	.component('day1Mi', Day1MiComponent)
+	.component('evaluateFormMi', EvaluateFormMIComponent) // Manny Isles
 
 	.component('startPageCw', StartPageCwComponent)
 	.component('questionCW', QuestionCWComponent)

@@ -4,6 +4,7 @@ class ActivityPageMiController{
         this.API =API;
         this.$state = $stateParams;
         this.$mdSidenav= $mdSidenav;
+        this.day_id = '';
         this.id='';
         this.gid='';
         this.gurl='';
@@ -13,17 +14,20 @@ class ActivityPageMiController{
     }
 
     $onInit(){
+        this.activity_id = '';
+        this.day_id=this.$state.day_id;
         this.id=this.$state.id;
-        this.gid=this.id % 9;
-        this.gurl="img/act/" + this.gid+".png";
+        this.gurl="img/activity/" + this.id+".png";
         this.getActivity();
     }
 
     getActivity(){
-        this.API.all('activity/' + this.gid).get('')
+        this.API.all('days/'+ this.day_id + '/activities/' + this.id).get('')
             .then((response) => {
-            this.activityTitle = response.data.activity.name;
-            this.activityText = response.data.activity.description;
+            this.activity_id = response.data.activities.id;;
+            this.activityTitle = response.data.activities.name;
+            this.activityText = response.data.activities.description;
+            this.gurl = 'img/activity/' + response.data.activities.icon;
         });
     }
     isOpenRight(){

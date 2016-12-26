@@ -53,13 +53,22 @@ $api->group(['middleware' => ['api']], function ($api) {
 
     //GroupQuestion
     $api->get('groupquestion/{id}', 'CWGroupQuestionController@getId');
-    
+
 });
 
 //protected API routes with JWT (must be logged in)
 $api->group(['middleware' => ['api', 'api.auth']], function ($api) {
     // Posts
    // $api->post('posts', 'PostsController@create');
+    
+    // Manny Isles
+    // Days
+    $api->get('days/{id}/activities', 'MIActivityController@dayActivities');
+    $api->get('days/{dayId}/activities/{id}', 'MIActivityController@show');
+
+    // Evaluate
+    $api->get('activities/{id}/evaluate', 'MIEvaluateController@create');
+    $api->post('activities/{id}/evaluate', 'MIEvaluateController@create');
     
 
 });

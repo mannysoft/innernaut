@@ -7,7 +7,7 @@
                     <img src="{{vm.gurl}}">
                 </md-card-avatar>
                 <md-card-header-text>
-                    <span class="md-title activity-title">{{vm.activityTitle}}</span>
+                    <span class="md-title activity-title">{{ vm.activityTitle }}</span>
                     <span class="activity-subhead">..be advised</span>
                 </md-card-header-text>
                 <md-card-avatar>
@@ -19,7 +19,7 @@
                             <md-menu-content>
                                 <div class="menu-start">
                                     <section layout="row" layout-sm="column" layout-align="center center" layout-wrap="">
-                                        <md-button class="md-raised md-primary" >Share</md-button>
+                                        <md-button class="md-raised md-primary">Share</md-button>
                                         <md-button class="md-raised md-primary">Learn</md-button>
                                         <md-button class="md-raised md-primary" href="#/list-elements">Analyze</md-button>
 
@@ -28,12 +28,11 @@
                                         <md-button class="md-raised md-primary"></md-button>
                                         <md-button class="md-raised md-primary"></md-button>
                                         <md-button class="md-raised md-primary"></md-button>
-
                                     </section>
                                     <section layout="row" layout-sm="column" layout-align="center center" layout-wrap="">
                                         <md-button class="md-raised md-primary">Plan </md-button>
                                         <md-button class="md-raised md-primary">Perform</md-button>
-                                        <md-button class="md-raised md-primary" href="#/evaluate">Evaluate</md-button>
+                                        <md-button class="md-raised md-primary" href="#/activities/{{ vm.activity_id }}/evaluate">Evaluate</md-button>
                                     </section>
 
                                 </div>
