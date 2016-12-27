@@ -11,6 +11,37 @@
 |
 */
 
+Route::get('results/{email}', function($email){
+    $user = \App\Modal\User::where('email', $email)->first();
+    $evaluates = \App\Modal\Evaluate::where('take_user_id', $user->id)->orderBy('created_at', 'desc')->get();
+
+    ?>
+    <table border=1>
+        <th>ID</th><th>group id</th><th>give user id</th><th>take user id</th><th>day</th><th>activity id</th>
+        <th>question id</th><th>group question id</th><th>answer</th><th>created at</th>
+    <?php
+    foreach ($evaluates as $evaluate) {
+        ?>
+        <tr>
+            <td><?php echo $evaluate->id;?></td>
+            <td><?php echo $evaluate->group_id;?></td>
+            <td><?php echo $evaluate->give_user_id;?></td>
+            <td><?php echo $evaluate->take_user_id;?></td>
+            <td><?php echo $evaluate->day;?></td>
+            <td><?php echo $evaluate->activity_id;?></td>
+            <td><?php echo $evaluate->question_id;?></td>
+            <td><?php echo $evaluate->groupquestion_id;?></td>
+            <td><?php echo $evaluate->answer;?></td>
+            <td><?php echo $evaluate->created_at;?></td>
+        </tr>
+        <?php
+    }
+
+    ?>
+    </table>
+    <?php
+});
+
 Route::group(['middleware' => ['web']], function () {
     Route::get('/', 'AngularController@serveApp');
 
@@ -60,7 +91,7 @@ $api->group(['middleware' => ['api']], function ($api) {
 $api->group(['middleware' => ['api', 'api.auth']], function ($api) {
     // Posts
    // $api->post('posts', 'PostsController@create');
-    
+
     // Manny Isles
     // Days
     $api->get('days/{id}/activities', 'MIActivityController@dayActivities');
@@ -69,6 +100,9 @@ $api->group(['middleware' => ['api', 'api.auth']], function ($api) {
     // Evaluate
     $api->get('activities/{id}/evaluate', 'MIEvaluateController@create');
     $api->post('activities/{id}/evaluate', 'MIEvaluateController@create');
+
+    // Users
+    $api->get('users', 'MIUserController@index');
     
 
 });

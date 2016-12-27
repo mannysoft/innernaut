@@ -78,7 +78,7 @@
             <section layout="row" layout-sm="column" layout-align="center center" layout-wrap="">
                 <!--<div flex="20" ng-repeat="question in vm.questions.questions">-->
                 <img src="img/gquestion.png">
-                <h2>{{ vm.secondquestions }}</h2>
+                <!-- <h2>{{ vm.secondquestions }}</h2> -->
                 <!--</div>-->
             </section>
             <form ng-submit="vm.submit33Question()">
@@ -219,7 +219,7 @@
             <section layout="row" layout-sm="column" layout-align="center center" layout-wrap="">
                 <!--<div flex="20" ng-repeat="question in vm.questions.questions">-->
                 <img src="img/gquestion.png">
-                <h2>{{vm.secondquestions}}</h2>
+                <!-- <h2>{{vm.secondquestions}}</h2> -->
             </section>
             <form ng-submit="vm.submit332Question()">
                 <!-- ng-repeat="(key, value) in vm.items" -->
@@ -513,131 +513,35 @@
                         <!--</div>-->
                     </section>
                     <form ng-submit="vm.groupScan()">
-                        <section layout="row" layout-sm="column" layout-align="center center" layout-wrap="">
+                        <input type="hidden" ng-model="vm.groupquestion_id">
+                        <section ng-repeat="(key, user) in vm.users" layout="row" layout-sm="column" layout-align="center center" layout-wrap="">
                             <p flex="10"></p>
-                            <h3 flex="10">Ruslan</h3>
+                            <h3 flex="10">{{ user.name }}</h3>
                             <div flex="80">
                                 <section layout="row" layout-sm="column" layout-align="center center" layout-wrap="">
                                     <div flex="10" layout="" layout-align="center center">
                                         <img src="img/hand/down.png">
                                     </div>
-                                    <md-slider flex="" md-discrete="" ng-model="vm.answer1" step="1" min="0" max="100" aria-label="rating">
+                                    <md-slider flex="" md-discrete="" ng-model="vm.useranswera[key]" step="1" min="0" max="100" aria-label="rating">
                                     </md-slider>
                                     <div flex="10" layout="" layout-align="center center">
                                         <img src="img/hand/up.png">
-
                                     </div>
-
                                 </section>
                                 <section layout="row" layout-sm="column" layout-align="center center" layout-wrap="">
                                     <div flex="10" layout="" layout-align="center center">
                                         <img src="img/hand/down.png">
                                     </div>
-                                    <md-slider flex="" md-discrete="" ng-model="vm.answer2" step="1" min="0" max="100" aria-label="rating">
+                                    <md-slider flex="" md-discrete="" ng-model="vm.useranswerb[key]" step="1" min="0" max="100" aria-label="rating">
                                     </md-slider>
                                     <div flex="10" layout="" layout-align="center center">
                                         <img src="img/hand/up.png">
-
                                     </div>
-
                                 </section>
                             </div>
                             <p flex="9"></p>
                         </section>
-                        <section layout="row" layout-sm="column" layout-align="center center" layout-wrap="">
-                            <p flex="10"></p>
-                            <h3 flex="10">Siv</h3>
-                            <div flex="80">
-                                <section layout="row" layout-sm="column" layout-align="center center" layout-wrap="">
-                                    <div flex="10" layout="" layout-align="center center">
-                                        <img src="img/hand/down.png">
-                                    </div>
-                                    <md-slider flex="" md-discrete="" ng-model="vm.answer3" step="1" min="0" max="100" aria-label="rating">
-                                    </md-slider>
-                                    <div flex="10" layout="" layout-align="center center">
-                                        <img src="img/hand/up.png">
-
-                                    </div>
-
-                                </section>
-                                <section layout="row" layout-sm="column" layout-align="center center" layout-wrap="">
-                                    <div flex="10" layout="" layout-align="center center">
-                                        <img src="img/hand/down.png">
-                                    </div>
-                                    <md-slider flex="" md-discrete="" ng-model="vm.answer4" step="1" min="0" max="100" aria-label="rating">
-                                    </md-slider>
-                                    <div flex="10" layout="" layout-align="center center">
-                                        <img src="img/hand/up.png">
-
-                                    </div>
-
-                                </section>
-                                <p flex="9"></p>
-                            </div>
-                        </section>
-                        <section layout="row" layout-sm="column" layout-align="center center" layout-wrap="">
-                            <p flex="10"></p>
-                            <h3 flex="10">Anna</h3>
-                            <div flex="80">
-                                <section layout="row" layout-sm="column" layout-align="center center" layout-wrap="">
-                                    <div flex="10" layout="" layout-align="center center">
-                                        <img src="img/hand/down.png">
-                                    </div>
-                                    <md-slider flex="" md-discrete="" ng-model="vm.answer5" step="1" min="0" max="100" aria-label="rating">
-                                    </md-slider>
-                                    <div flex="10" layout="" layout-align="center center">
-                                        <img src="img/hand/up.png">
-
-                                    </div>
-
-                                </section>
-                                <section layout="row" layout-sm="column" layout-align="center center" layout-wrap="">
-                                    <div flex="10" layout="" layout-align="center center">
-                                        <img src="img/hand/down.png">
-                                    </div>
-                                    <md-slider flex="" md-discrete="" ng-model="vm.answer6" step="1" min="0" max="100" aria-label="rating">
-                                    </md-slider>
-                                    <div flex="10" layout="" layout-align="center center">
-                                        <img src="img/hand/up.png">
-
-                                    </div>
-
-                                </section>
-                                <p flex="9"></p>
-                            </div>
-                        </section>
-                        <section layout="row" layout-sm="column" layout-align="center center" layout-wrap="">
-                            <p flex="10"></p>
-                            <h3 flex="10">Peter</h3>
-                            <div flex="80">
-                                <section layout="row" layout-sm="column" layout-align="center center" layout-wrap="">
-                                    <div flex="10" layout="" layout-align="center center">
-                                        <img src="img/hand/down.png">
-                                    </div>
-                                    <md-slider flex="" md-discrete="" ng-model="vm.answer7" step="1" min="0" max="100" aria-label="rating">
-                                    </md-slider>
-                                    <div flex="10" layout="" layout-align="center center">
-                                        <img src="img/hand/up.png">
-
-                                    </div>
-
-                                </section>
-                                <section layout="row" layout-sm="column" layout-align="center center" layout-wrap="">
-                                    <div flex="10" layout="" layout-align="center center">
-                                        <img src="img/hand/down.png">
-                                    </div>
-                                    <md-slider flex="" md-discrete="" ng-model="vm.answer8" step="1" min="0" max="100" aria-label="rating">
-                                    </md-slider>
-                                    <div flex="10" layout="" layout-align="center center">
-                                        <img src="img/hand/up.png">
-
-                                    </div>
-
-                                </section>
-                            </div>
-                            <p flex="9"></p>
-                        </section>
-
+                        
                         <section layout="row" layout-sm="column" layout-align="center center" layout-wrap="">
 
                             <div style="margin-top: 50px;"></div>

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Gateways;
 
 use App\Modal\Evaluate;
 use App\Modal\Activity;
@@ -8,17 +8,10 @@ use App\Http\Requests;
 use App\Modal\User;
 use Illuminate\Http\Request;
 
-class MIEvaluateController extends Controller
+class Evaluation
 {
-    public function create(Request $request)
+    public function evaluate($request)
     {
-        $this->validate($request, [
-            //'giver'  => 'required',
-            //'taker' => 'required',
-            //'day' => 'required',
-            //'answer' => 'required',
-       ]);
-
         $activity = Activity::find($request->id);
 
         if ($request->q33) {
@@ -121,22 +114,6 @@ class MIEvaluateController extends Controller
             $evaluate->save();
         }
 
-       return response()->success(compact('evaluate'));
-     }
-
-    public function show($id)
-    {
-        $evaluates = Evaluate::find(1);
-
-        return response()
-            ->success(compact('evaluates'));
-    }
-
-    public function get()
-    {
-        $evaluates = Evaluate::get();
-
-        return response()
-            ->success(compact('evaluates'));
+        return $evaluate;
     }
 }

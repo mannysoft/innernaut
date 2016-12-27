@@ -46,7 +46,7 @@ class MIActivityController extends Controller
 
     public function dayActivities($dayId)
     {
-        $activities = Activity::where('day', $dayId)->get();
+        $activities = Activity::where('day', $dayId)->limit(8)->get();
         $dayName = config('days.' . $dayId);
         return response()->success(compact('activities', 'dayName'));
     }

@@ -6,11 +6,13 @@ class EvaluateFormMIController{
         this.$state = $stateParams;
         this.ToastService = ToastService;
         this.firstquestions = "Question need to encode";
-        this.secondquestions = "";
+        this.secondquestions = "My motivation and will are as i wish them to be!";
+        this.groupquestion_id = 1;
     }
 
     $onInit(){
         this.id = this.$state.id;
+        this.groupquestion_id = 0;
 
         this.items = {
             1 : "Motivation",
@@ -56,7 +58,21 @@ class EvaluateFormMIController{
         this.t3answer8b = 0;
         this.t3answer9b = 0;
 
+        this.useranswera = [0, 0, 0, 0, 0];
+        this.useranswerb = [0, 0, 0, 0, 0];
+        // this.useranswera2 = 0;
+        // this.useranswera3 = 0;
+        // this.useranswera4 = 0;
+        // this.useranswera5 = 0;
+
+        // this.useranswerb1 = 0;
+        // this.useranswerb2 = 0;
+        // this.useranswerb3 = 0;
+        // this.useranswerb4 = 0;
+        // this.useranswerb5 = 0;
+
         this.getQuestion();
+        this.getGroupUsers();
     }
 
     getQuestion(){
@@ -65,7 +81,15 @@ class EvaluateFormMIController{
             this.firstquestions = response.data.questions.problem;
             // this.id = this.$state.id;
             //this.id = response.data.questions.id;
-    });
+        });
+    }
+
+    // Users
+    getGroupUsers(){
+        this.API.all('users').get('')
+            .then((response) => {
+            this.users = response.data.users;
+        });
     }
     singleQuestion(){
         var data = {
@@ -75,8 +99,6 @@ class EvaluateFormMIController{
             day: this.day,
             answer: this.answer
         };
-
-        // console.log("post");
 
         this.API.all('activities/'+ this.id + '/evaluate').post(data).then((response) => {
             this.ToastService.show('Evaluate added successfully');
@@ -98,7 +120,7 @@ class EvaluateFormMIController{
             answer6: this.t3answer6,
             answer7: this.t3answer7,
             answer8: this.t3answer8,
-            answer9: this.t3answer9,
+            answer9: this.t3answer9
         };
 
         this.API.all('activities/'+ this.id + '/evaluate').post(data).then((response) => {
@@ -150,19 +172,25 @@ class EvaluateFormMIController{
             taker: this.taker,
             day: this.day,
             groupscan: true,
+            groupquestion_id: this.groupquestion_id,
+            useranswera: this.useranswera,
+            useranswerb: this.useranswerb,
         };
 
-        // this.API.all('evaluate').post(data).then((response) => {
-        //     this.ToastService.show('Evaluate added successfully');
-        // });
-        // this.id = this.id + 1;
-        // this.getQuestion();
+        console.log(this.useranswera);
+        console.log(this.useranswerb);
+
+        this.API.all('activities/'+ this.id + '/evaluate').post(data).then((response) => {
+            this.ToastService.show('Evaluate added successfully');
+        });
     }
 
     three(id){
         this.API.all('groupquestion/'+id).get('')
             .then((response) => {
+            this.groupquestion_id = response.data.groupquestion.id;
             this.secondquestions = response.data.groupquestion.problem;
+
             });
     }
 }
