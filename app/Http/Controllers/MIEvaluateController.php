@@ -19,55 +19,65 @@ class MIEvaluateController extends Controller
             //'answer' => 'required',
        ]);
 
+        // We dont save its already exists
+
         $activity = Activity::find($request->id);
 
         if ($request->q33) {
             for ($i=1; $i < 10; $i++) { 
                 $answer = 'answer' . $i;
-                $evaluate = new Evaluate;
-                $evaluate->group_id = auth()->user()->group_id;
-                $evaluate->give_user_id = $request->input('giver', 1);
-                $evaluate->take_user_id = auth()->user()->id;
-                $evaluate->day = $activity->day;
-                $evaluate->activity_id = $request->id;
-                $evaluate->question_id = null;
-                $evaluate->groupquestion_id = $i;
-                $evaluate->measure = 3;
-                $evaluate->answer = $request->$answer;
+                
+                $evaluate = Evaluate::firstOrNew([
+                        'group_id' => auth()->user()->group_id,
+                        'give_user_id' => $request->input('giver', 1),
+                        'take_user_id' => auth()->user()->id,
+                        'day' => $activity->day,
+                        'activity_id' => $request->id,
+                        'question_id' => null,
+                        'groupquestion_id' => $i,
+                        'measure' => 3,
+                        'answer' => $request->$answer
+                ]);
+
                 $evaluate->save();
+
             }
         } elseif ($request->q332) {
             for ($i=1; $i < 10; $i++) { 
                 $answer = 'answer' . $i .'a';
-                $evaluate = new Evaluate;
-                $evaluate->group_id = auth()->user()->group_id;
-                $evaluate->give_user_id = $request->input('giver', 1);
-                $evaluate->take_user_id = auth()->user()->id;
-                $evaluate->day = $activity->day;
-                $evaluate->activity_id = $request->id;
-                $evaluate->question_id = null;
-                $evaluate->groupquestion_id = $i;
-                $evaluate->measure = 3;
-                $evaluate->answer = $request->$answer;
-                $evaluate->letter = 'a';
+
+                $evaluate = Evaluate::firstOrNew([
+                        'group_id' => auth()->user()->group_id,
+                        'give_user_id' => $request->input('giver', 1),
+                        'take_user_id' => auth()->user()->id,
+                        'day' => $activity->day,
+                        'activity_id' => $request->id,
+                        'question_id' => null,
+                        'groupquestion_id' => $i,
+                        'measure' => 3,
+                        'answer' => $request->$answer,
+                        'letter' => 'a',
+                ]);
+
                 $evaluate->save();
 
                 $answer = 'answer' . $i .'b';
-                $evaluate = new Evaluate;
-                $evaluate->group_id = auth()->user()->group_id;
-                $evaluate->give_user_id = $request->input('giver', 1);
-                $evaluate->take_user_id = auth()->user()->id;
-                $evaluate->day = $activity->day;
-                $evaluate->activity_id = $request->id;
-                $evaluate->question_id = null;
-                $evaluate->groupquestion_id = $i;
-                $evaluate->measure = 3;
-                $evaluate->answer = $request->$answer;
-                $evaluate->letter = 'b';
+                $evaluate = Evaluate::firstOrNew([
+                        'group_id' => auth()->user()->group_id,
+                        'give_user_id' => $request->input('giver', 1),
+                        'take_user_id' => auth()->user()->id,
+                        'day' => $activity->day,
+                        'activity_id' => $request->id,
+                        'question_id' => null,
+                        'groupquestion_id' => $i,
+                        'measure' => 3,
+                        'answer' => $request->$answer,
+                        'letter' => 'b',
+                ]);
                 $evaluate->save();
             }
         } elseif ($request->groupscan) {
-            
+
             // We need to get all the users with in the group
             $users = User::where('group_id', auth()->user()->group_id)
               ->where('id', '!=', auth()->user()->id)
@@ -78,46 +88,51 @@ class MIEvaluateController extends Controller
 
             $i = 0;
             foreach ($users as $user) {
-                $evaluate = new Evaluate;
-                $evaluate->group_id = auth()->user()->group_id;
-                $evaluate->give_user_id = $request->input('giver', 1);
-                $evaluate->take_user_id = auth()->user()->id;
-                $evaluate->day = $activity->day;
-                $evaluate->activity_id = $request->id;
-                $evaluate->question_id = null;
-                $evaluate->groupquestion_id = $request->groupquestion_id;
-                $evaluate->measure = 3;
-                $evaluate->answer = $answersa[$i];
-                $evaluate->letter = 'a';
-                $evaluate->group_user_id = $user->id;
+
+                $evaluate = Evaluate::firstOrNew([
+                    'group_id' => auth()->user()->group_id,
+                    'give_user_id' => $request->input('giver', 1),
+                    'take_user_id' => auth()->user()->id,
+                    'day' => $activity->day,
+                    'activity_id' => $request->id,
+                    'question_id' => null,
+                    'groupquestion_id' => $request->groupquestion_id,
+                    'measure' => 3,
+                    'answer' => $answersa[$i],
+                    'letter' => 'a',
+                    'group_user_id' => $user->id,
+                ]);
                 $evaluate->save();
 
-                $evaluate = new Evaluate;
-                $evaluate->group_id = auth()->user()->group_id;
-                $evaluate->give_user_id = $request->input('giver', 1);
-                $evaluate->take_user_id = auth()->user()->id;
-                $evaluate->day = $activity->day;
-                $evaluate->activity_id = $request->id;
-                $evaluate->question_id = null;
-                $evaluate->groupquestion_id = $request->groupquestion_id;
-                $evaluate->measure = 3;
-                $evaluate->answer = $answersb[$i];
-                $evaluate->letter = 'b';
-                $evaluate->group_user_id = $user->id;
+                $evaluate = Evaluate::firstOrNew([
+                    'group_id' => auth()->user()->group_id,
+                    'give_user_id' => $request->input('giver', 1),
+                    'take_user_id' => auth()->user()->id,
+                    'day' => $activity->day,
+                    'activity_id' => $request->id,
+                    'question_id' => null,
+                    'groupquestion_id' => $request->groupquestion_id,
+                    'measure' => 3,
+                    'answer' => $answersb[$i],
+                    'letter' => 'b',
+                    'group_user_id' => $user->id,
+                ]);
                 $evaluate->save();
                 $i ++;
             }
         } else {
-            $evaluate = new Evaluate;
-            $evaluate->group_id = auth()->user()->group_id;
-            $evaluate->give_user_id = $request->input('giver', 1);
-            $evaluate->take_user_id = auth()->user()->id;
-            $evaluate->day = $activity->day;
-            $evaluate->activity_id = $request->id;
-            $evaluate->question_id = $request->input('id');
-            $evaluate->groupquestion_id = $request->input('groupquestion_id');
-            $evaluate->measure = 3;
-            $evaluate->answer = $request->input('answer');
+
+            $evaluate = Evaluate::firstOrNew([
+                    'group_id' => auth()->user()->group_id,
+                    'give_user_id' => $request->input('giver', 1),
+                    'take_user_id' => auth()->user()->id,
+                    'day' => $activity->day,
+                    'activity_id' => $request->id,
+                    'question_id' => $request->input('id'),
+                    'groupquestion_id' => $request->input('groupquestion_id'),
+                    'measure' => 3,
+                    'answer' => $request->input('answer'),
+            ]);
             $evaluate->save();
         }
 
