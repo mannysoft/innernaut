@@ -228,7 +228,7 @@ class MIEvaluateController extends Controller
                 'id' => $key,
                 'title' => $val,
                 'description' => $val,
-                'path' => 'img/charts/' . auth()->user()->id . '/' . $activityId . '/' .$key . '.png',
+                'path' => 'img/charts/' . auth()->user()->id . '/' . $activityId . '/' .$key . '.png?hash' . md5(time()),
             ];
         }
 
