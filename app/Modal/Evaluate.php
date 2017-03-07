@@ -11,6 +11,7 @@ class Evaluate extends Model
     protected $table = 'evaluates';
 
     protected $fillable = [
+        'question_type',
         'group_id',
         'give_user_id',
         'take_user_id',

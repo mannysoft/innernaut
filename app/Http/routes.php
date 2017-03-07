@@ -87,6 +87,7 @@ $api->group(['middleware' => ['api']], function ($api) {
 
     $api->get('charts/pie', 'MIChartController@index');
     $api->get('charts/scatter', 'MIChartController@scatter');
+    $api->get('charts/line', 'MIChartController@lineChart');
 
 });
 
@@ -109,6 +110,9 @@ $api->group(['middleware' => ['api', 'api.auth']], function ($api) {
 
     // Elements
     $api->get('elements', 'MIElementController@index');
+
+    // Analyze
+    $api->get('activities/{id}/analyze', 'MIEvaluateController@analyze');
 
     // Charts
     //$api->get('charts', 'MIChartController@index');

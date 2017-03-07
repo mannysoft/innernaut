@@ -7,7 +7,7 @@ use App\Element;
 use App\Http\Requests;
 use DB;
 
-class CWElementController extends Controller
+class MIElementController extends Controller
 {   
     public function create(Request $request)
     {
@@ -29,7 +29,7 @@ class CWElementController extends Controller
        return response()->success(compact('element'));
     }
 
-    public function get()
+    public function index()
     {
         $elements = Element::get();
 

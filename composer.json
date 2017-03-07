@@ -28,7 +28,7 @@
             "App\\": "app/"
         },
         "files": [
-            "app/lib/phpchartdir.php"
+            "app/Lib/phpchartdir.php"
         ]
     },
     "autoload-dev": {

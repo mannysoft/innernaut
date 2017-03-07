@@ -198,6 +198,15 @@ export function RoutesConfig($stateProvider, $urlRouterProvider) {
                 }
             }
         })
+        .state('app.analyze', {
+            url: '/activities/:id/analyze',
+            params: { id : null},
+            views: {
+                'main@': {
+                    templateUrl: getView('list-elements-mi')
+                }
+            }
+        })
         // .state('app.activities', {
         //     url: '/days/:day_id/activities/:id',
         //     params: { day_id: null, id : null},

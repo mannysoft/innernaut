@@ -18,6 +18,7 @@ import {ActivityPageMiComponent} from './app/components/activity-page-mi/activit
 import {Dayoff0Component} from './app/components/dayoff0/dayoff0.component';
 import {Day0MiComponent} from './app/components/day0-mi/day0-mi.component';
 import {EvaluateFormMIComponent} from './app/components/evaluate-form-mi/evaluate-form-mi.component';
+import {ListElementsMIComponent} from './app/components/list-elements-mi/list-elements-mi.component';
 // Manny Isles end
 
 
@@ -57,6 +58,7 @@ angular.module('app.components')
 	.component('startPageMi', StartPageMiComponent)
 	.component('activityPageMi', ActivityPageMiComponent) // Manny Isles
 	.component('day0Mi', Day0MiComponent)
+	.component('listElementsMi', ListElementsMIComponent)
 	.component('evaluateFormMi', EvaluateFormMIComponent) // Manny Isles
 
 	.component('startPageCw', StartPageCwComponent)

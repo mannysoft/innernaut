@@ -1,0 +1,16 @@
+<md-content>
+    <section layout="row" layout-sm="column" layout-align="center center" layout-wrap="">
+        <div layout="row" layout-wrap>
+            <section layout="row" layout-sm="column" layout-align="center center" layout-wrap="">
+                <div flex="33" ng-repeat="element in vm.elements.elements">
+                    <md-card>
+                        <img src="{{ element.path }}" class="md-card-image" alt="image caption">
+                        <md-card-content>
+                            <h2>{{element.title}}</h2>
+                        </md-card-content>
+                    </md-card>
+                </div>
+            </section>
+        </div>
+    </section>
+</md-content>

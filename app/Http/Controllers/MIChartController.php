@@ -41,4 +41,15 @@ class MIChartController extends Controller
       $chart = new Chart;
       $chart->scatter();
     }
+
+    public function lineChart()
+    {
+      dd(auth()->user()->id);
+      $data = array(30, 35, 40, 55, 75, 100);
+
+      # The labels for the line chart
+      $labels = array("17", "18", "19", "20", "30", "50");
+      $chart = new Chart;
+      $chart->lineChart($data, $labels);
+    }
 }

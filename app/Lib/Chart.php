@@ -102,4 +102,70 @@ class Chart
 		# Output the chart
 		file_put_contents('img/charts/scatter.png', $c->makeChart2(PNG));
     }
+
+    public function lineChart($data, $labels, $userIdFolder, $activityId, $q)
+    {
+		# Create a XYChart object of size 250 x 250 pixels
+		$c = new XYChart(354, 314);
+
+		# Set the plotarea at (30, 20) and of size 200 x 200 pixels
+		$c->setPlotArea(30, 20, 280, 250);
+
+		# Add a line chart layer using the given data
+		// $c->addLineLayer($data);
+
+		// # Set the labels on the x axis.
+		// $c->xAxis->setLabels($labels);
+
+		// # Display 1 out of 3 labels on the x-axis.
+		// $c->xAxis->setLabelStep(1);
+
+		# Set the plotarea at (70, 20) and of size 500 x 300 pixels, with transparent background and border
+		# and light grey (0xcccccc) horizontal grid lines
+		//$c->setPlotArea(70, 20, 500, 300, Transparent, -1, Transparent, 0xcccccc);
+
+		# Set the x and y axis stems to transparent and the label font to 12pt Arial
+		$c->xAxis->setColors(Transparent);
+		$c->yAxis->setColors(Transparent);
+		$c->xAxis->setLabelStyle("arial.ttf", 12);
+		$c->yAxis->setLabelStyle("arial.ttf", 12);
+
+		# Add a blue (0x6699bb) bar chart layer using the given data
+		$layer = $c->addBarLayer($data, 0x6699bb);
+
+		# Use bar gradient lighting with the light intensity from 0.8 to 1.3
+		$layer->setBorderColor(Transparent, barLighting(0.8, 1.3));
+
+		# Set rounded corners for bars
+		$layer->setRoundedCorners();
+
+		# Display labela on top of bars using 12pt Arial font
+		$layer->setAggregateLabelStyle("Arial", 12);
+
+		# Set the labels on the x axis.
+		$c->xAxis->setLabels($labels);
+
+		# For the automatic y-axis labels, set the minimum spacing to 40 pixels.
+		$c->yAxis->setTickDensity(40);
+
+		# Add a title to the y axis using dark grey (0x555555) 14pt Arial Bold font
+		$c->yAxis->setTitle("Y-Axis Title Placeholder", "arialbd.ttf", 14, 0x555555);
+
+		# Output the chart
+		// header("Content-type: image/png");
+		// print($c->makeChart2(PNG));
+
+		// create folder if exists
+		$folder = 'img/charts/' . $userIdFolder . '/' . $activityId;
+
+		if ( ! is_dir('img/charts/' . $userIdFolder)) {
+			mkdir('img/charts/' . $userIdFolder, 0777);
+		}
+
+		if ( ! is_dir($folder)) {
+			mkdir($folder, 0777);
+		}
+
+		file_put_contents($folder . '/' . $q . '.png', $c->makeChart2(PNG));
+    }
 }

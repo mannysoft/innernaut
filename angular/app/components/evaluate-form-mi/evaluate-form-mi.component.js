@@ -101,7 +101,7 @@ class EvaluateFormMIController{
         };
 
         this.API.all('activities/'+ this.id + '/evaluate').post(data).then((response) => {
-            this.ToastService.show('Evaluate added successfully');
+            this.ToastService.show('Evaluation saved successfully');
         });
         // this.id = this.id+1;
         //this.getQuestion();
@@ -124,7 +124,7 @@ class EvaluateFormMIController{
         };
 
         this.API.all('activities/'+ this.id + '/evaluate').post(data).then((response) => {
-            this.ToastService.show('Evaluate added successfully');
+            this.ToastService.show('Evaluation for 3x3 questions saved successfully');
         });
         // this.id = this.id + 1;
         // this.getQuestion();
@@ -159,7 +159,7 @@ class EvaluateFormMIController{
         };
 
         this.API.all('activities/'+ this.id + '/evaluate').post(data).then((response) => {
-            this.ToastService.show('Evaluate added successfully');
+            this.ToastService.show('Evaluation for 3x3x2 questions saved successfully');
         });
         // this.id = this.id + 1;
         // this.getQuestion();
@@ -181,7 +181,7 @@ class EvaluateFormMIController{
         console.log(this.useranswerb);
 
         this.API.all('activities/'+ this.id + '/evaluate').post(data).then((response) => {
-            this.ToastService.show('Evaluate added successfully');
+            this.ToastService.show('Evaluation for group scan saved successfully');
         });
     }
 
